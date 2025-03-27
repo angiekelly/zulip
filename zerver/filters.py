@@ -8,6 +8,7 @@ from typing_extensions import override
 
 class ZulipExceptionReporterFilter(SafeExceptionReporterFilter):
     # Add _SALT to the standard list
+    #backendzerver
     hidden_settings = re.compile(
         r"API|TOKEN|KEY|SECRET|PASS|SIGNATURE|HTTP_COOKIE|_SALT", flags=re.IGNORECASE
     )
@@ -35,5 +36,5 @@ class ZulipExceptionReporterFilter(SafeExceptionReporterFilter):
 
         for var in filtered_vars:
             if var in filtered_post:
-                filtered_post[var] = "**********"
+                filtered_post[var] = "***********"
         return filtered_post
