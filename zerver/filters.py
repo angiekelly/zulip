@@ -36,5 +36,5 @@ class ZulipExceptionReporterFilter(SafeExceptionReporterFilter):
 
         for var in filtered_vars:
             if var in filtered_post:
-                filtered_post[var] = "***********"
+                filtered_post[var] = "**********"
         return filtered_post
